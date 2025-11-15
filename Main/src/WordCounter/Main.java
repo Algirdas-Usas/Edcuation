@@ -15,7 +15,7 @@ public class Main {
             if (rad.equalsIgnoreCase("stop")) {
                 break; // Avsluta programmet om användaren skriver "stop"
             }
-            // Skickar den inlästa raden till Logik-klassen som uppdaterar räknarna
+            // Skickar den inlästa raden till Logik som uppdaterar räknarna
             logik.raknaRad(rad);
         }
         //skriver ut reslutaten
@@ -26,3 +26,4 @@ public class Main {
         sc1.close();
     }
 }
+
