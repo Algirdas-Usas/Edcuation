@@ -11,7 +11,7 @@ public class Logik {
     // Tar emot en rad text och uppdaterar statistik
     public void raknaRad(String rad) {
         antalRader++;
-        antalTecken += rad.length();
+        antalTecken += rad.replace(" ", "").length(); //ändrar mellanslag till inget
     }
     //hämtar värderna och returnerar
     public int getAntalRader() {
@@ -22,3 +22,4 @@ public class Logik {
         return antalTecken;
     }
 }
+
