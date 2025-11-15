@@ -6,21 +6,21 @@ public class LogikTest {
     @Test
     void testEnLangRad() {
         Logik logik = new Logik();
-        logik.raknaRad("Hej på dig, fint väder idag"); // 22 tecken (mellanslag ignoreras)
+        logik.raknaRad("Jag vill köpa en ny bmw, 550M 5 liter, 560hk"); // 35 tecken (mellanslag ignoreras)
         assertEquals(1, logik.getAntalRader(), "Antal rader ska vara 1");
-        assertEquals(22, logik.getAntalTecken(), "Antal tecken ska vara 22");
+        assertEquals(35, logik.getAntalTecken(), "Antal tecken ska vara 22");
     }
 
     @Test
     void testutanmellanrum() {
         Logik logik = new Logik();
-        logik.raknaRad("Hej  ");          // 3 tecken (mellanslag ignoreras)
-        logik.raknaRad("på dig!");        // 6 tecken (”på” 2 + ”dig!” 4)
-        logik.raknaRad("  :)  ");        // 2 tecken (":)" är två, mellanslag ignoreras)
+        logik.raknaRad("BMW, ska vara fullutrustad  ");          // 23 tecken (mellanslag ignoreras)
+        logik.raknaRad("Helst mattsvart färg!");        // 19 tecken (mellanslag ignoreras)
+        logik.raknaRad("  *)*  ");        // 3 tecken (mellanslag ignoreras)
         logik.raknaRad("");               // 0 tecken
 
         assertEquals(4, logik.getAntalRader(), "Ska vara 4 rader totalt");
-        assertEquals(3 + 6 + 2 + 0, logik.getAntalTecken(), "Tecken räknas utan mellanslag");
+        assertEquals(4 + 3 + 4 + 12 + 5 + 9 + 5 + 3, logik.getAntalTecken(), "Tecken räknas utan mellanslag");
     }
 
     @Test
@@ -31,4 +31,3 @@ public class LogikTest {
         assertEquals(0, logik.getAntalTecken(), "Tom rad ska inte lägga till tecken");
     }
 }
-
